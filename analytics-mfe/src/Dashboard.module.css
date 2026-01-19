@@ -1,0 +1,278 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.subtitle {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-bottom: 16px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.2s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: #d1d5db;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.cardTitle {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.trend {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.trendUp {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.trendDown {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.cardValue {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 16px;
+}
+
+.miniChart {
+    height: 40px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.barNodes {
+    display: flex;
+    gap: 4px;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+}
+
+.bar {
+    flex: 1;
+    background-color: #e5e7eb;
+    border-radius: 2px;
+    transition: height 0.3s ease;
+}
+
+.card:hover .bar {
+    background-color: #111827;
+}
+
+/* Modal Overlay Styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal {
+    background-color: white;
+    width: 600px;
+    max-width: 90%;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #f3f4f6;
+    background-color: #f9fafb;
+}
+
+.modalHeader h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #111827;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #6b7280;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.closeBtn:hover {
+    background-color: #e5e7eb;
+    color: #111827;
+}
+
+.modalContent {
+    padding: 32px;
+}
+
+.bigStat {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 32px;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+.breakdown h4,
+.insights h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+}
+
+.chartContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 180px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+    margin-bottom: 24px;
+}
+
+.chartBarGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.chartBar {
+    width: 40px;
+    background-color: #111827;
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.chartBar:hover {
+    background-color: #3b82f6;
+    transform: scaleY(1.05);
+    transform-origin: bottom;
+}
+
+.barTooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #111827;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+
+.chartBar:hover .barTooltip {
+    opacity: 1;
+}
+
+.monthLabel {
+    font-size: 0.75rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.insights ul {
+    padding-left: 20px;
+    color: #374151;
+}
+
+.insights li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
