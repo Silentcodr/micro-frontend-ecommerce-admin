@@ -8,13 +8,16 @@ interface Product {
     price: number;
     stock: number;
     status: 'Active' | 'Draft';
+    image: string;
 }
 
+const MFE_URL = 'http://localhost:5001';
+
 const initialProducts: Product[] = [
-    { id: 1, name: 'Minimalist Chair', category: 'Furniture', price: 249.00, stock: 45, status: 'Active' },
-    { id: 2, name: 'Modern Lamp', category: 'Lighting', price: 89.00, stock: 120, status: 'Active' },
-    { id: 3, name: 'Abstract Canvas', category: 'Decor', price: 150.00, stock: 12, status: 'Draft' },
-    { id: 4, name: 'Ceramic Vase', category: 'Decor', price: 45.00, stock: 88, status: 'Active' },
+    { id: 1, name: 'Minimalist Chair', category: 'Furniture', price: 249.00, stock: 45, status: 'Active', image: `${MFE_URL}/chair.png` },
+    { id: 2, name: 'Modern Lamp', category: 'Lighting', price: 89.00, stock: 120, status: 'Active', image: `${MFE_URL}/lamp.png` },
+    { id: 3, name: 'Abstract Canvas', category: 'Decor', price: 150.00, stock: 12, status: 'Draft', image: `${MFE_URL}/canvas.png` },
+    { id: 4, name: 'Ceramic Vase', category: 'Decor', price: 45.00, stock: 88, status: 'Active', image: `${MFE_URL}/vase.png` },
 ];
 
 const ProductList: React.FC = () => {
@@ -76,7 +79,7 @@ const ProductList: React.FC = () => {
                 <table className={styles.table}>
                     <thead>
                         <tr>
-                            <th>Product Name</th>
+                            <th>Product</th>
                             <th>Category</th>
                             <th>Status</th>
                             <th>Price</th>
@@ -88,7 +91,10 @@ const ProductList: React.FC = () => {
                         {filteredProducts.map(product => (
                             <tr key={product.id}>
                                 <td>
-                                    <div className={styles.productName}>{product.name}</div>
+                                    <div className={styles.productInfo}>
+                                        <img src={product.image} alt={product.name} className={styles.productImage} />
+                                        <div className={styles.productName}>{product.name}</div>
+                                    </div>
                                 </td>
                                 <td>{product.category}</td>
                                 <td>
