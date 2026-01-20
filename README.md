@@ -1,25 +1,27 @@
-🛍️ Micro-Frontend E-Commerce Admin Panel
+# 🛍️ Micro-Frontend E-Commerce Admin Panel
 
-A micro-frontend e-commerce admin panel built using React + TypeScript + Module Federation (Webpack) for the frontend and a Node.js + Express backend.
-This project demonstrates a scalable frontend architecture where multiple independently deployable apps (micro-frontends) are orchestrated by a host shell.
+A **micro-frontend e-commerce admin panel** built using **React + TypeScript + Module Federation (Webpack)** for the frontend and a **Node.js + Express** backend.  
+This project demonstrates a **scalable frontend architecture** where multiple independently deployable apps (micro-frontends) are orchestrated by a **host shell**.
 
-🚀 Project Overview
+---
 
-This project is a modular e-commerce administration dashboard split into three micro-frontends:
+## 🚀 Project Overview
 
-🏠 Host Shell – Main container that loads micro-frontends dynamically
+This project is a **modular e-commerce administration dashboard** split into multiple micro-frontends:
 
-📦 Product Management Micro App – Manage product listing, add/edit products
+- 🏠 **Host Shell** – Main container that loads micro-frontends dynamically  
+- 📦 **Product Management Micro App** – Manage product listing, add/edit products  
+- 🛒 **Order Management Micro App** – View and manage customer orders  
+- 📊 **Analytics Micro App** – Dashboard with key performance indicators  
 
-🛒 Order Management Micro App – View and manage customer orders
+Each micro-frontend is developed with **React and TypeScript** and configured using **Webpack Module Federation** to enable **independent deployment** and **lazy loading**.
 
-📊 Analytics Micro App – Dashboard with key performance indicators
+The backend is a simple **Node.js + Express API** serving product and order data.
 
-Each micro-frontend is developed with React and TypeScript, and is configured using Webpack Module Federation to enable independent deployment and lazy loading.
+---
 
-The backend is a simple Node.js + Express API serving product and order data.
+## 🧠 Architecture
 
-🧠 Architecture
 micro-frontend-ecommerce-admin/
 │
 ├── host-shell/                  # Host container
@@ -29,6 +31,7 @@ micro-frontend-ecommerce-admin/
 ├── backend/                     # Express backend APIs
 └── README.md
 
+
 🧱 Micro-Frontend Design
 Component	Purpose
 Host Shell	Navigation, layout, loading micro-frontends
@@ -37,14 +40,13 @@ Order Management MF	View and update order status
 Analytics MF	KPI insights, charts, summaries
 Backend API	REST endpoints for products & orders
 🛠 Technology Stack
-
 Frontend
 
 🧪 React + TypeScript
 
 📦 Webpack Module Federation
 
-🎨 CSS Modules / Styled Components (modular styling)
+🎨 CSS Modules / Styled Components
 
 🚏 Client-side routing
 
@@ -54,7 +56,8 @@ Backend
 
 📡 RESTful APIs
 
-🗄 JSON or in-memory data storage (can upgrade to DB later)
+🗄 JSON / In-memory data storage
+(Can be upgraded to a database later)
 
 📦 Features
 🧩 Host Shell
@@ -79,9 +82,9 @@ Responsive product list UI
 
 View all orders
 
-Update status (pending, shipped, delivered)
+Update order status (pending, shipped, delivered)
 
-Search/filter orders
+Search and filter orders
 
 📊 Analytics Dashboard
 
@@ -96,7 +99,7 @@ cd micro-frontend-ecommerce-admin
 
 Install Dependencies
 
-For each folder inside the repo:
+Run the following commands inside each folder:
 
 cd host-shell
 npm install
@@ -118,7 +121,7 @@ cd backend
 npm start
 
 
-This starts the backend server on:
+Backend will start at:
 
 http://localhost:5000
 
@@ -138,8 +141,7 @@ npm start
 cd analytics-microfrontend
 npm start
 
-
-By default:
+Default Ports
 
 Host Shell → http://localhost:3000
 
@@ -149,9 +151,9 @@ Order App → http://localhost:3002
 
 Analytics App → http://localhost:3003
 
-🧪 Test
+🧪 Testing
 
-Add your unit and integration tests following the structure in each micro frontend.
+Add unit and integration tests following the structure in each micro-frontend.
 
 npm test
 
@@ -159,32 +161,24 @@ npm test
 
 This project uses Webpack Module Federation to share components and dependencies across micro-frontends.
 
-Can be extended with:
-
-Authentication
-
-Database integration (MongoDB / PostgreSQL)
-
-Deployment via GitHub Pages / Vercel / Netlify
+The architecture supports scalability and independent deployments.
 
 📌 Future Enhancements
 
-Add real analytics charts (Chart.js, Recharts)
+Add real analytics charts (Chart.js / Recharts)
 
-User authentication + roles (Admin, Editor)
+User authentication & role management (Admin, Editor)
 
-Backend database (MongoDB / SQL)
+Backend database integration (MongoDB / SQL)
 
-CI/CD pipeline (GitHub Actions)
+CI/CD pipeline using GitHub Actions
 
 🤝 Contributing
 
 Contributions are welcome!
-Fork the repo ➜ Create a branch ➜ Make a PR.
+Fork the repository → Create a branch → Submit a Pull Request.
 
 📫 Contact
 
-Connect with me via GitHub or by email:
+Connect with me via GitHub or email:
 📧 sudhansanthoshraj007@gmail.com
-
-⭐ If you found this useful, please give it a star!
